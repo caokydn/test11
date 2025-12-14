@@ -20,21 +20,6 @@
 
   /* --- AUDIO CONTROLS --- */
 
-const back10Btn = document.getElementById("back10Btn");
-const forward10Btn = document.getElementById("forward10Btn");
-
-back10Btn.onclick = () => {
-  if(!audioEnabled) return;
-  audio.currentTime = Math.max(0, audio.currentTime - 10);
-  updateTime();
-};
-
-forward10Btn.onclick = () => {
-  if(!audioEnabled) return;
-  audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
-  updateTime();
-};
-
 
   #audioControls{
     display:flex;
@@ -173,8 +158,8 @@ Bài tập Listen & Draw</h1>
 
   <!-- 👇 thêm -->
 
-  <button id="back10Btn">⏪ 10s</button>
-  <button id="forward10Btn">⏩ 10s</button>
+  <button id="back10Btn">⏪ 5s</button>
+  <button id="forward10Btn">⏩ 5s</button>
 
 
   <input type="range" id="seekBar" min="0" max="100" value="0">
@@ -222,12 +207,14 @@ const forward10Btn = document.getElementById("forward10Btn");
 
 back10Btn.onclick = () => {
   if(!audioEnabled) return;
-  audio.currentTime = Math.max(0, audio.currentTime - 10);
+  audio.currentTime = Math.max(0, audio.currentTime - 5);
+  updateTime();
 };
 
 forward10Btn.onclick = () => {
   if(!audioEnabled) return;
-  audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+  audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+  updateTime();
 };
 
 
